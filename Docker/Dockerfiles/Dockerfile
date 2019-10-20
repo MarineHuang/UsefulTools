@@ -24,13 +24,13 @@ RUN set -ex \
  && wget https://raw.githubusercontent.com/MarineHuang/UsefulTools/master/conf/.vimrc_marinehuang -O ~/.vimrc
 
 # Install Java
-RUN wget --quiet https://raw.githubusercontent.com/MarineHuang/UsefulTools/master/Software/oracle/java_se/jdk-11.0.1_linux-x64_bin.tar.gz -O /opt/jdk.tar.gz \
- && tar -xzvf /opt/jdk.tar.gz \
- && rm /opt/jdk.tar.gz \
- && echo "# JAVA" >> ~/.bashrc \
- && echo "export JAVA_HOME=/opt/jdk" >> ~/.bashrc \
- && echo "export PATH=$JAVA_HOME/bin:$PATH" >> ~/.bashrc \
- && echo "export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar" >> ~/.bashrc
+#RUN wget --quiet https://raw.githubusercontent.com/MarineHuang/UsefulTools/master/Software/oracle/java_se/jdk-11.0.1_linux-x64_bin.tar.gz -O /opt/jdk.tar.gz \
+# && tar -xzvf /opt/jdk.tar.gz \
+# && rm /opt/jdk.tar.gz \
+# && echo "# JAVA" >> ~/.bashrc \
+# && echo "export JAVA_HOME=/opt/jdk" >> ~/.bashrc \
+# && echo "export PATH=$JAVA_HOME/bin:$PATH" >> ~/.bashrc \
+# && echo "export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar" >> ~/.bashrc
  
 # Install Tomcat
 RUN wget --quiet https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.47/bin/apache-tomcat-8.5.47.tar.gz -O /opt/tomcat.tar.gz \

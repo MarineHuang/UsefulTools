@@ -19,10 +19,12 @@ def srt_to_txt(srt_path, txt_path):
     txt_file.close()
 
 if __name__ == "__main__":
-    if len(sys.argv) < 1:
-        print >>sys.stderr, "{0} srt_path txt_path".format(__file__)
+    if len(sys.argv) < 2:
+        print >>sys.stderr, "{0} srt_path [txt_path]".format(__file__)
         sys.exit(1)
     
     srt_path=sys.argv[1]
-    txt_path=sys.argv[2] if len(sys.argv) >=2 else srt_path+'.txt'
+    txt_path=srt_path+'.txt'
+    if len(sys.argv) > 2:
+        txt_path=sys.argv[2]
     srt_to_txt(srt_path,txt_path)
